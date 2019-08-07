@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+
+<!-- Scott Otto, Justin Douglas, Douglas Drake, David Kloepper -->
+<!-- Data Visualization Bootcamp, Cohort 3-->
+<!-- August 7th, 2019-->
+
+<html>
+
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Bootstrap Visualization Dashboard</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootswatch/4.3.1/sandstone/bootstrap.min.css">
+
+  <!--CSS Link-->
+  <link rel="stylesheet" type="text/css" href="style.css">
+
+
+
+</head>
+
+<body>
+    <!-- Navigation Section -->
+    <div class="navigation">
+        <nav class="navbar navbar-expand-lg navbar-light">
+          <a class="navbar-brand" href="index.html">Machine Learning & National Comorbidity Study (NCS-1)</a>
+          <button class="navbar-toggler  border border-white" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
+            aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNavDropdown">
+            <ul class="navbar-nav ml-auto">
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown"
+                  aria-haspopup="true" aria-expanded="false">
+                  Project Methodology
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+
+                  <a class="dropdown-item" href="datasource.html">Data Source</a>
+                  <a class="dropdown-item" href="datacleanup.html">Data Cleanup</a>
+                  <a class="dropdown-item" href="machinelearning.html">Machine Learning</a>
+                  <a class="dropdown-item" href="results.html">Results</a>
+                </div>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="https://github.com/Justinmatt21/NCS-1MLProject" target="_blank">GitHub Repository</a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link" href="references.html">Additional References</a>
+                </li>
+            </ul>
+          </div>
+        </nav>
+      </div>
+  <!-- Content Section -->
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <div class="box">
+          <nav aria-label="breadcrumb">
+              <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Data Cleanup</li>
+              </ol>
+            </nav>
+              <h2 class="title">Data Source Cleanup</h2>
+              <hr>
+            </div> 
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-lg-12 col-md-6">
+        <!-- Left box  -->
+        <div class="box">
+          <h5 class="title">Variable Selection</h5>
+          <p>Due to the constraints of time, bandwidth and knowledge, we opted to choose a limited number of variables from the complete
+            set for the purposes of modeling. The list was reduced to 29 variables, based on research performed by the team that suggested 
+            certain elements that might be of most interest to the goal of predicting suicide attempts.</p>
+            <h5>Variable selected for prediction: V1144</h5>
+            <p>V6309 is a Yes/No response question, "Have you ever attempted suicide?"</p>
+            
+          <div class="dropdown">
+              <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"  style="width:100%;">
+                Select a variable from the list to view its definition on the ICPSR website
+              </button>
+              <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                <a class="dropdown-item" href="https://www.icpsr.umich.edu/icpsrweb/ICPSR/studies/06693/datasets/0001/variables/V1144?archive=icpsr" target = "_blank">Attempted Suicide - V1144</a>
+                <a class="dropdown-item" href="https://www.icpsr.umich.edu/icpsrweb/ICPSR/studies/06693/datasets/0001/variables/V6305?archive=icpsr" target="_blank">Made Suicide Plan - V6305</a>
+                <a class="dropdown-item" href="https://www.icpsr.umich.edu/icpsrweb/ICPSR/studies/06693/datasets/0001/variables/V1143?archive=icpsr" target="_blank">Thought About Suicide - V6301</a>
+                <a class="dropdown-item" href="https://www.icpsr.umich.edu/icpsrweb/ICPSR/studies/06693/datasets/0002/variables/EDCAT?archive=icpsr" target = "_blank">Education Categories - EDCAT</a>
+                <a class="dropdown-item" href="https://www.icpsr.umich.edu/icpsrweb/ICPSR/studies/06693/datasets/0002/variables/RACE?archive=icpsr" target="_blank">Four Race Categories - RACE</a>
+                <a class="dropdown-item" href="https://www.icpsr.umich.edu/icpsrweb/ICPSR/studies/06693/datasets/0002/variables/EMP?archive=icpsr" target="_blank">Employment Status - EMP</a>
+                <a class="dropdown-item" href="https://www.icpsr.umich.edu/icpsrweb/ICPSR/studies/06693/datasets/0002/variables/DEPREC?archive=icpsr" target="_blank">Major Depression Recency - DEPREC</a>
+                <a class="dropdown-item" href="https://www.icpsr.umich.edu/icpsrweb/ICPSR/studies/06693/datasets/0002/variables/ALCALT1?archive=icpsr" target="_blank">Alc abuse w/ or w/o Dependence - ALCALT1</a>
+                <a class="dropdown-item" href="https://www.icpsr.umich.edu/icpsrweb/ICPSR/studies/06693/datasets/0002/variables/DRGALT1?archive=icpsr" target="_blank">Drug Abuse w/ or w/o Dependence - ALCALT2</a>
+                <a class="dropdown-item" href="https://www.icpsr.umich.edu/icpsrweb/ICPSR/studies/06693/datasets/0001/variables/V12?archive=icpsr" target="_blank">Participant's Age - V12</a>
+                <a class="dropdown-item" href="https://www.icpsr.umich.edu/icpsrweb/ICPSR/studies/06693/datasets/0001/variables/V13?archive=icpsr" target="_blank">Participant's Sex - V13</a>
+                <a class="dropdown-item" href="https://www.icpsr.umich.edu/icpsrweb/ICPSR/studies/06693/datasets/0001/variables/V4515?archive=icpsr" target="_blank">Marriage Status - V4515</a>
+                <a class="dropdown-item" href="https://www.icpsr.umich.edu/icpsrweb/ICPSR/studies/06693/datasets/0001/variables/V5114?archive=icpsr" target="_blank">Temperamental - V5114</a>
+                <a class="dropdown-item" href="https://www.icpsr.umich.edu/icpsrweb/ICPSR/studies/06693/datasets/0001/variables/V5113?archive=icpsr" target="_blank">Nervousness - V5118</a>
+                <a class="dropdown-item" href="https://www.icpsr.umich.edu/icpsrweb/ICPSR/studies/06693/datasets/0001/variables/V5118?archive=icpsr" target="_blank">Discontentedness - V5113</a>
+                <a class="dropdown-item" href="https://www.icpsr.umich.edu/icpsrweb/ICPSR/studies/06693/datasets/0001/variables/V5115?archive=icpsr" target="_blank">Irritability - V5115</a>
+                <a class="dropdown-item" href="https://www.icpsr.umich.edu/icpsrweb/ICPSR/studies/06693/datasets/0001/variables/V5112?archive=icpsr" target="_blank">Tenseness - V5112</a>
+                <a class="dropdown-item" href="https://www.icpsr.umich.edu/icpsrweb/ICPSR/studies/06693/datasets/0001/variables/V4428?archive=icpsr" target="_blank">Self-Identity Question - V4428</a>
+                <a class="dropdown-item" href="https://www.icpsr.umich.edu/icpsrweb/ICPSR/studies/06693/datasets/0001/variables/V4433?archive=icpsr" target="_blank">Self-Respect Question - V4433</a>
+                <a class="dropdown-item" href="https://www.icpsr.umich.edu/icpsrweb/ICPSR/studies/06693/datasets/0001/variables/V5225?archive=icpsr" target="_blank">Physiological Pain - V5225</a>
+                <a class="dropdown-item" href="https://www.icpsr.umich.edu/icpsrweb/ICPSR/studies/06693/datasets/0001/variables/V6649?archive=icpsr" target="_blank">Father attempted suicide - V6649</a>
+                <a class="dropdown-item" href="https://www.icpsr.umich.edu/icpsrweb/ICPSR/studies/06693/datasets/0001/variables/V6749?archive=icpsr" target="_blank">Mother attempted suicide - V6749</a>
+                <a class="dropdown-item" href="https://www.icpsr.umich.edu/icpsrweb/ICPSR/studies/06693/datasets/0001/variables/V5918?archive=icpsr" target="_blank">Hopelessness - V5918</a>
+                <a class="dropdown-item" href="https://www.icpsr.umich.edu/icpsrweb/ICPSR/studies/06693/datasets/0001/variables/V6143?archive=icpsr" target="_blank">Physically Abused as a Child - V6143</a>
+                <a class="dropdown-item" href="https://www.icpsr.umich.edu/icpsrweb/ICPSR/studies/06693/datasets/0001/variables/V6126?archive=icpsr" target="_blank">Victim of Molestation - V6126</a>
+                <a class="dropdown-item" href="https://www.icpsr.umich.edu/icpsrweb/ICPSR/studies/06693/datasets/0001/variables/V6114?archive=icpsr" target="_blank">Victim of Rape - V6114</a>
+                <a class="dropdown-item" href="https://www.icpsr.umich.edu/icpsrweb/ICPSR/studies/06693/datasets/0001/variables/V101?archive=icpsr" target="_blank">Perception of Physical Health - V101</a>
+                <a class="dropdown-item" href="https://www.icpsr.umich.edu/icpsrweb/ICPSR/studies/06693/datasets/0001/variables/V102?archive=icpsr" target="_blank">Perception of Mental Health - V102</a>
+                <a class="dropdown-item" href="https://www.icpsr.umich.edu/icpsrweb/ICPSR/studies/06693/datasets/0001/variables/V6215?archive=icpsr" target="_blank">Number of Life Traumas Experienced - V6215</a>
+              </div>
+        </div>
+      </div>
+      <hr>
+    </div>
+  </div>
+  <div class="row">
+      <div class="col-lg-12 col-md-6">
+        <div class="box">
+          <h5 class="title">Value Scraping & Translation</h5>
+          <p>To make use of the integer values and for purposes of readability, we needed to translate them to category lables. 
+            This information was available in the study code book, as well as via the ICPSR website. </p>
+            <img src="images\webpageV6301.PNG" alt="Example Web Page of Variable 6301" style="width:50%;display:block; margin-left: auto;margin-right: auto;"> 
+          <br><hr><br>
+          <p>Using Python, a script was created using BeautifulSoup to scrape all the table values for each variable and convert 
+            them into a dictionary format. The dictionary was then used to map the study data values to their respective category labels.
+          </p>
+          <div class="row">
+
+          <div class="col-4 imageContainer">
+              <img src="images\scraping.png" alt="Jupyter Notebook - Scraping"> 
+          </div>
+          <div class="col-4 imageContainer">
+              <img src="images\htmlconvert.png" alt="Jupyter Notebook - Convert HTML to Dictionary"> 
+          </div>
+          <div class="col-4 imageContainer">
+              <img src="images\htmlconvert2.png" alt="Jupyter Notebook - Apply Category Labels"> 
+          </div>
+        </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-12 col-md-6">
+          <div class="box">
+            <h5 class="title">Data Preparation for Model Input</h5>
+            <p>Final steps were performed to prepare the data for entry into the machine learning model:</p>
+            <ul>
+              <li>Remove all missing values by case. Remaining full cases: 1345</li>
+
+              <li>Convert categorical predictors to one-hot encoded using pandas.get_dummies().   
+                This increases the number of predictors to 118 – all but one predictor is 0-1-valued.</li>
+              <li>Scale the predictors</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+  </div>
+  <!-- Footer Section -->
+  <footer>
+    <div class="footer">Copyright &copy; Team Turduken 2019</div>
+  </footer>
+
+  <!-- Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+</body>
+
+</html>

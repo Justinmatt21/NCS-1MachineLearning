@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+
+<!-- Scott Otto, Justin Douglas, Douglas Drake, David Kloepper -->
+<!-- Data Visualization Bootcamp, Cohort 3-->
+<!-- August 7th, 2019-->
+
+<html>
+
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Bootstrap Visualization Dashboard</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootswatch/4.3.1/sandstone/bootstrap.min.css">
+
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+  </script>
+
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-MML-AM_CHTML' async></script>
+
+
+
+  <!--CSS Link-->
+  <link rel="stylesheet" type="text/css" href="style.css">
+
+</head>
+
+<body>
+    <!-- Navigation Section -->
+    <div class="navigation">
+        <nav class="navbar navbar-expand-lg navbar-light">
+          <a class="navbar-brand" href="index.html">Machine Learning & National Comorbidity Study (NCS-1)</a>
+          <button class="navbar-toggler  border border-white" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
+            aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNavDropdown">
+            <ul class="navbar-nav ml-auto">
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown"
+                  aria-haspopup="true" aria-expanded="false">
+                  Project Methodology
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+
+                  <a class="dropdown-item" href="datasource.html">Data Source</a>
+                  <a class="dropdown-item" href="datacleanup.html">Data Cleanup</a>
+                  <a class="dropdown-item" href="machinelearning.html">Machine Learning</a>
+                  <a class="dropdown-item" href="results.html">Results</a>
+                </div>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="https://github.com/Justinmatt21/NCS-1MLProject" target="_blank">GitHub Repository</a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link" href="references.html">Additional References</a>
+                </li>
+            </ul>
+          </div>
+        </nav>
+      </div>
+  <!-- Content Section -->
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+
+            <nav aria-label="breadcrumb" style="margin-top:25px;">
+                <ol class="breadcrumb">
+                  <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                  <li class="breadcrumb-item active" aria-current="page">Machine Learning</li>
+                </ol>
+              </nav>
+
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-lg-8 col-md-6">
+        <!-- Left box  -->
+        <div class="box">
+
+          <h3 class="title">Logistic Regression with L1 Regularization</h3>
+
+          <hr>
+          <p>Let Y denote the response variable. $Y$ is a 0-1 valued variable with a success coded as
+              a 1. Let $X = (X_1 . . . X_m)$ denote the values of the $m$ predictors.</p>
+              <p>The odds ratio $O$ is dened to as:</p>
+              <p style="text-align:center">$$O = {Pr(Y = 1|X) \over 1- Pr(Y = 1|X)}$$</p>
+              <p>The traditional logistic regression model assumes that the log-odds ratio is related
+              to the predictors by:</p>
+              <p style="text-align:center">$$logit = log(O) = \beta_0 + \beta_1X_1 + ... + \beta_mX_m$$</p>
+              <p>The slope parameters in this model have a meaning interpretation; for example,
+              consider $\beta_1$. If we increase $X_1$ by one unit while holding the other predictors fixed,
+              exp($\beta_1$) is the resulting change in the odds for success. If $\beta_1 = 0.693$, the odds of success
+              doubles when $X_1$ increases by one unit $exp(0.693) = 2$.</p>
+
+        </div>
+      </div>
+      <div class="col-lg-4 col-md-6">
+        <!-- Right Box -->
+        <div class="card text-center bg-info" style="margin-top:100px;">
+            <h4 class="card-header">Classification Matrix</h4>
+            <img class="card-img-top" src="images\classificationmatrix.png" alt="Classification Matrix">
+            <div class="card-body">
+              <p class="card-text">Describe the classification matrix results here.</p>
+            </div>
+          </div>
+      </div>
+    </div>
+    <div class="row">
+        <div class="col-12">
+          <!-- Left box  -->
+          <div class="box">
+            <h4>The Fitting Criterion</h4>
+            <hr>
+            <p>Given a data set $(Y_1,X_1), . . . , (Y_n,X_n)$, the usual method of fitting the logistic regression
+                model minimizes a criterion of the form:
+                $$Dev(\beta) = (-2N^{-1} log L(\beta | X) = -2N^{-1} log \prod_{Y_1=1} Pr(Y_i | X_i;\beta ) \prod_{Y_1=0} Pr(Y_i | X_i; \beta)$$
+                When the dimension of X is large, the t can become unstable. We can enforce
+                sparsity in the solution by considering a penalty term for large values of . One penalty
+                term that is often incorporated is the so-called LASSO penalty. The penalized criterion
+                is
+                $$Dev(\beta) + \lambda \sum_{j=1}^m|\beta_j|$$
+                When $\lambda = 0$, there is no penalty. As $\lambda$ grows, larger values of $\beta_j$ are penalized.</p>
+  
+          </div>
+        </div>
+      </div>
+      <div class="row">
+          <div class="col-lg-6 col-md-12">
+            <!-- Left box  -->
+            <div class="box">
+              <h4>L1-regularization path</h4>
+              <hr>
+              <img src="images\reguarizationPath.png" alt="L1 Regularization Path">
+              <p>Moving from right to left, the paths show how the parameters shrink with the increasing penalization.  
+
+                  The vertical line at C = 0.05 corresponds to the best parameter choice as found by GridSearchCV.
+                  
+                  Credit: Alexandre Gramfort <alexander.gramfort@inria.fr>
+                  </p>
+    
+            </div>
+          </div>
+          <div class="col-lg-6 col-md-12">
+              <!-- Left box  -->
+              <div class="box">
+                <h4>ROC Curve of Classifier</h4>
+                <hr>
+                <img src="images\roccurve.png" alt="ROC Curve">
+                <p>Describe ROC curve of the classifier.</p>
+      
+              </div>
+            </div>
+        </div>
+  </div>
+  <!-- Footer Section -->
+  <footer>
+    <div class="footer">Copyright &copy; Team Turducken 2019</div>
+  </footer>
+
+  <!-- Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  
+
+</body>
+
+</html>

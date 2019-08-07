@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+
+<!-- Scott Otto, Justin Douglas, Douglas Drake, David Kloepper -->
+<!-- Data Visualization Bootcamp, Cohort 3-->
+<!-- August 7th, 2019-->
+
+<html>
+
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Bootstrap Visualization Dashboard</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootswatch/4.3.1/sandstone/bootstrap.min.css">
+
+  <!--CSS Link-->
+  <link rel="stylesheet" type="text/css" href="style.css">
+
+
+
+</head>
+
+<body>
+    <!-- Navigation Section -->
+    <div class="navigation">
+        <nav class="navbar navbar-expand-lg navbar-light">
+          <a class="navbar-brand" href="index.html">Machine Learning & National Comorbidity Study (NCS-1)</a>
+          <button class="navbar-toggler  border border-white" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
+            aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNavDropdown">
+            <ul class="navbar-nav ml-auto">
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown"
+                  aria-haspopup="true" aria-expanded="false">
+                  Project Methodology
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+
+                  <a class="dropdown-item" href="datasource.html">Data Source</a>
+                  <a class="dropdown-item" href="datacleanup.html">Data Cleanup</a>
+                  <a class="dropdown-item" href="machinelearning.html">Machine Learning</a>
+                  <a class="dropdown-item" href="results.html">Results</a>
+                </div>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="https://github.com/Justinmatt21/NCS-1MLProject" target="_blank">GitHub Repository</a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link" href="references.html">Additional References</a>
+                </li>
+            </ul>
+          </div>
+        </nav>
+      </div>
+  <!-- Content Section -->
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12 col-md-12">
+        <div class="box">
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                  <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                  <li class="breadcrumb-item active" aria-current="page">Data Source</li>
+                </ol>
+              </nav>
+          <h3 class="title">Data Source Overview</h3>
+          <hr>
+          <h2>National Comorbidity Survey: Baseline (NCS-1), 1990-1992</h2>
+          <br>
+          <h4>Study Summary</h4>
+          <p>The National Comorbidity Survey: Baseline (NCS-1) was a collaborative epidemiologic 
+            investigation designed to study the prevalence and correlates of DSM III-R disorders and 
+            patterns and correlates of service utilization for these disorders. The NCS-1 was the 
+            first survey to administer a structured psychiatric interview to a nationally representative sample. 
+            The survey was carried out in the early 1990s with a household sample of over 8,000 respondents. 
+            Subsamples of the original respondents completed the NCS-1 Part II survey and Tobacco Use Supplement. 
+            Diagnoses were based on a modified version of the Composite International Diagnostic Interview (the UM-CIDI), 
+            which was developed at the University of Michigan for the NCS-1. Drugs covered by this survey include alcohol,
+             tobacco, sedatives, stimulants, tranquilizers, analgesics, inhalants, marijuana/hashish, cocaine, 
+             hallucinogens, heroin, nonmedical use of prescription drugs, and polysubstance use. Other items include 
+             demographic characteristics, personal and family history of substance use and abuse, substance abuse treatment, 
+             data on drug use including recency, frequency, and age at first use, problems resulting from the use of drugs, 
+             personal and family history of psychiatric problems, mental health treatment, symptoms of psychiatric disorders, 
+             mental health status, HIV risk behaviors, and physical health status.
+          </p>
+          <h5>Citation</h5>
+          <p>Kessler, Ronald C. National Comorbidity Survey: Baseline (NCS-1), 1990-1992. Ann Arbor, MI: 
+            Inter-university Consortium for Political and Social Research [distributor], 
+            2008-09-12. <a href="https://doi.org/10.3886/ICPSR06693.v6">https://doi.org/10.3886/ICPSR06693.v6</a></p>
+          <br><hr><br>
+          <h4>Data Description</h4>
+          <p>The data for the NCS-1 survey is publically availble without use restriction on the website of the University of Michigan 
+              Inter-university Consortium for Political and Social Research (ICPSR) 
+              <a href="https://www.icpsr.umich.edu/icpsrweb/">www.icpsr.umich.edu/icpsrweb/</a>
+          </p>
+          <h5>Total Records: 8,098</h5>
+          <h5>Total Columns: 2,954</h5>
+          <p>The fields within the NCS-1 data have coded headers and all response values are translated to integers, including 'n/a', 
+            'don't know' and 'inappropriate' responses. Valid values and integer ranges for each field could be translated through the use 
+            of the study code book. <b>As a PDF, the code book is over 1,800 pages.</b> All code book entries are also available via the 
+            web on the ICPSR website and served a source for scraping the ncessary results.</p>          
+        </div>
+      </div>
+      <div class="col-lg-12 col-md-12">
+          <h5>Example Code Book Entries</h5>
+          <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+              <div class="carousel-inner">
+                <div class="carousel-item active">
+                  <img src="images/codebookV104.PNG" class="d-block w-100" alt="...">
+                </div>
+                <div class="carousel-item">
+                  <img src="images/codebookV3742.PNG" class="d-block w-100" alt="...">
+                </div>
+                <div class="carousel-item">
+                  <img src="images/codebookV6303.PNG" class="d-block w-100" alt="...">
+                </div>
+              </div>
+              <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+              </a>
+              <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+              </a>
+            </div>
+      </div>
+    </div>
+  </div>
+  <!-- Footer Section -->
+  <footer>
+    <div class="footer">Copyright &copy; Team Turduken 2019</div>
+  </footer>
+
+  <!-- Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+</body>
+
+</html>

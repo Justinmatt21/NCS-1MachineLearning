@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+
+<!-- Scott Otto, Justin Douglas, Douglas Drake, David Kloepper -->
+<!-- Data Visualization Bootcamp, Cohort 3-->
+<!-- August 7th, 2019-->
+
+<html>
+
+<head>
+
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Bootstrap Visualization Dashboard</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootswatch/4.3.1/sandstone/bootstrap.min.css">
+
+  <!--CSS Link-->
+  <link rel="stylesheet" type="text/css" href="style.css">
+
+</head>
+
+<body>
+    <!-- Navigation Section -->
+    <div class="navigation">
+        <nav class="navbar navbar-expand-lg navbar-light">
+          <a class="navbar-brand" href="index.html">Machine Learning & National Comorbidity Study (NCS-1)</a>
+          <button class="navbar-toggler  border border-white" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
+            aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNavDropdown">
+            <ul class="navbar-nav ml-auto">
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown"
+                  aria-haspopup="true" aria-expanded="false">
+                  Project Methodology
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+
+                  <a class="dropdown-item" href="datasource.html">Data Source</a>
+                  <a class="dropdown-item" href="datacleanup.html">Data Cleanup</a>
+                  <a class="dropdown-item" href="machinelearning.html">Machine Learning</a>
+                  <a class="dropdown-item" href="results.html">Results</a>
+                </div>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="https://github.com/Justinmatt21/NCS-1MLProject" target="_blank">GitHub Repository</a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link" href="references.html">Additional References</a>
+                </li>
+            </ul>
+          </div>
+        </nav>
+      </div>
+  <!-- Content Section -->
+  <div class="container">
+
+    <div class="row">
+      <div class="col-12">
+        <div class="box">
+          <nav aria-label="breadcrumb">
+              <ol class="breadcrumb">
+                <li class="breadcrumb-item active" aria-current="page">Home</li>
+              </ol>
+            </nav>
+            <hr>
+        <h2>Project Overview</h2>
+        <p>Many assessments of suicide risk focus mainly on assessing symptoms of depression, past suicidal behavior, and suicidal
+           ideation because these traits are strongly associated with suicide attempts.  Although an effective suicide 
+           assessment should be relatively brief, assessments such as these may be neglecting to include other behavioral and 
+           demographic variables which are strongly associated with attempted suicide.  By referencing psychological studies on 
+           variables associated with suicide attempts and implementing these in a machine learning model, we created a model which
+            relatively accurately predicts who is likely to attempt (or who has already attempted) suicide based on responses to 
+            the National Comorbidity Survey - Baseline.  If a model like this is incorporated into a standard computerized health 
+            assessment, it would be possible to automatically alert the practitioner if their client’s assessment responses are 
+            similar to people who have attempted suicide in the past.</p>
+      </div>
+    </div>
+      <div class="col-lg-10 col-md-12">
+        <!-- Left box  -->
+        <div class="box">
+          <h3 class="title">Suicide Summary Statistics</h3>
+          <h5>Data Source: National Center for Health Statictics, Centers for Disease Control and Prevention</h5>
+          <hr>
+          <div class='tableauPlaceholder' id='viz1564849918667' style='position:relative;'>
+              <noscript>
+                <a href='#'>
+                  <img alt=' ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;M6&#47;M6QQDPW7P&#47;1_rss.png' style='border: none' />
+                </a>
+              </noscript>
+              <object class='tableauViz' style='display:none;'>
+                <param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> 
+                <param name='embed_code_version' value='3' /> 
+                <param name="load-order" value="1"/>
+                <param name='path' value='shared&#47;M6QQDPW7P' /> 
+                <param name='toolbar' value='yes' />
+                <param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;M6&#47;M6QQDPW7P&#47;1.png' /> 
+                <param name='animate_transition' value='yes' />
+                <param name='display_static_image' value='yes' />
+                <param name='display_spinner' value='yes' />
+                <param name='display_overlay' value='yes' />
+                <param name='display_count' value='yes' />
+              </object>
+            </div>  
+            <script type='text/javascript'>
+              var divElement = document.getElementById('viz1564849918667');                    
+              var vizElement = divElement.getElementsByTagName('object')[0];                    
+              vizElement.style.width='100%';vizElement.style.height=(divElement.offsetWidth*0.75)+'px';                    
+              var scriptElement = document.createElement('script');                    
+              scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';                    
+              vizElement.parentNode.insertBefore(scriptElement, vizElement);                
+            </script>
+          <div class='tableauPlaceholder' id='viz1564853141038' style='position:relative;'>
+            <noscript>
+              <a href='#'>
+                <img alt=' ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Pr&#47;Project3-InjuryIntent&#47;Deathline&#47;1_rss.png' style='border: none' />
+              </a>
+            </noscript>
+            <object class='tableauViz'  style='display:none;'>
+              <param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' />
+               <param name='embed_code_version' value='3' /> <param name='site_root' value='' />
+               <param name="load-order" value="2"/>
+               <param name='name' value='Project3-InjuryIntent&#47;Deathline' />
+               <param name='tabs' value='no' />
+               <param name='toolbar' value='yes' />
+               <param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Pr&#47;Project3-InjuryIntent&#47;Deathline&#47;1.png' /> 
+               <param name='animate_transition' value='yes' />
+               <param name='display_static_image' value='yes' />
+               <param name='display_spinner' value='yes' />
+               <param name='display_overlay' value='yes' />
+               <param name='display_count' value='yes' />
+               <param name='filter' value='publish=yes' />
+              </object>
+            </div>                
+            <script type='text/javascript'>                    
+              var divElement = document.getElementById('viz1564853141038');                    
+              var vizElement = divElement.getElementsByTagName('object')[0];                    
+              vizElement.style.width='100%';vizElement.style.height=(divElement.offsetWidth*0.75)+'px';                    
+              var scriptElement = document.createElement('script');                    
+              scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';                    
+              vizElement.parentNode.insertBefore(scriptElement, vizElement); 
+              divElement.style.display = "none"               
+            </script>    
+          <div class='tableauPlaceholder' id='viz1564856237613' style='position:relative;'>
+            <noscript>
+              <a href='#'>
+                <img alt=' ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Pr&#47;Project3-DeathTrendAgeType&#47;DeathAgeGroup&#47;1_rss.png' style='border: none' />
+              </a>
+            </noscript>
+            <object class='tableauViz'  style='display:none;'>
+              <param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' />
+              <param name='embed_code_version' value='3' /> 
+              <param name='site_root' value='' />
+              <param name='name' value='Project3-DeathTrendAgeType&#47;DeathAgeGroup' />
+              <param name='tabs' value='no' />
+              <param name='toolbar' value='yes' />
+              <param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Pr&#47;Project3-DeathTrendAgeType&#47;DeathAgeGroup&#47;1.png' /> 
+              <param name='animate_transition' value='yes' />
+              <param name='display_static_image' value='yes' />
+              <param name='display_spinner' value='yes' />
+              <param name='display_overlay' value='yes' />
+              <param name='display_count' value='yes' />
+              <param name='filter' value='publish=yes' />
+            </object>
+          </div>                
+          <script type='text/javascript'>                    
+          var divElement = document.getElementById('viz1564856237613');                    
+          var vizElement = divElement.getElementsByTagName('object')[0];                    
+          vizElement.style.width='100%';vizElement.style.height=(divElement.offsetWidth*0.75)+'px';                    
+          var scriptElement = document.createElement('script');                    
+          scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';                    
+          vizElement.parentNode.insertBefore(scriptElement, vizElement);                
+          </script>
+        </div>
+      </div>
+      <div class="col-lg-2 col-md-12">
+        <!-- Right Box -->
+        <div class="box">
+            <h5 class="title">Visualizations</h5>
+            <hr>
+            <div class="container">
+              <div class="row">
+                <div class="col-lg-12 col-md-3">
+                  <div class="btn-group-vertical">
+                  <button type="button" class="btn btn-primary tableauToggle" onclick="toggleTableau('viz1564849918667')" id="mainButton">Injury Mechanisms
+                    <img class="panel" src="https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;M6&#47;M6QQDPW7P&#47;1.png" alt="Injury Intent Viz" title="Injury Intent">
+                  </button>
+                  <button type="button" class="btn btn-primary" onclick="toggleTableau('viz1564853141038')">Deaths by Type
+                      <img class="panel" src="https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Pr&#47;Project3-InjuryIntent&#47;Deathline&#47;1.png" alt="Deaths by Type Viz" title="Deaths by Type">
+                  </button>
+                  <button type="button" class="btn btn-primary" onclick="toggleTableau('viz1564856237613')">Deaths by Age
+                      <img class="panel" src="https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Pr&#47;Project3-DeathTrendAgeType&#47;DeathAgeGroup&#47;1.png" alt="Deaths by Age Viz" title="Deaths by Age">
+                  </button>
+                </div>
+              </div>
+  
+  
+              </div>
+            </div>
+  
+  
+          </div>
+      </div>
+    </div>
+  </div>
+  <!-- Footer Section -->
+  <footer>
+    <div class="footer">Copyright &copy; Team Turduken 2019</div>
+  </footer>
+
+
+
+  <script>
+    function toggleTableau(vizId) {
+      var tableauVizes = document.getElementsByClassName("tableauPlaceholder");
+      for(var i = 0; i < tableauVizes.length; i++)
+      {
+        if (tableauVizes.item(i).id === vizId) {
+          tableauVizes.item(i).style.display = "block";           
+        } else {
+          tableauVizes.item(i).style.display = "none";
+        }
+      }
+
+    }
+  </script>
+
+
+
+
+
+
+
+</body>
+
+</html>
