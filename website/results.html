@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+
+<!-- Scott Otto, Justin Douglas, Douglas Drake, David Kloepper -->
+<!-- Data Visualization Bootcamp, Cohort 3-->
+<!-- August 7th, 2019-->
+
+<html>
+
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Bootstrap Visualization Dashboard</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootswatch/4.3.1/sandstone/bootstrap.min.css">
+
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+  </script>
+
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-MML-AM_CHTML' async></script>
+
+
+
+  <!--CSS Link-->
+  <link rel="stylesheet" type="text/css" href="style.css">
+
+</head>
+
+<body>
+    <!-- Navigation Section -->
+    <div class="navigation">
+        <nav class="navbar navbar-expand-lg navbar-light">
+          <a class="navbar-brand" href="index.html">Machine Learning & National Comorbidity Study (NCS-1)</a>
+          <button class="navbar-toggler  border border-white" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
+            aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNavDropdown">
+            <ul class="navbar-nav ml-auto">
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown"
+                  aria-haspopup="true" aria-expanded="false">
+                  Project Methodology
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+
+                  <a class="dropdown-item" href="datasource.html">Data Source</a>
+                  <a class="dropdown-item" href="datacleanup.html">Data Cleanup</a>
+                  <a class="dropdown-item" href="machinelearning.html">Machine Learning</a>
+                  <a class="dropdown-item" href="results.html">Results</a>
+                </div>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="https://github.com/Justinmatt21/NCS-1MLProject" target="_blank">GitHub Repository</a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link" href="references.html">Additional References</a>
+                </li>
+            </ul>
+          </div>
+        </nav>
+      </div>
+  <!-- Content Section -->
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+
+            <nav aria-label="breadcrumb" style="margin-top:25px;">
+                <ol class="breadcrumb">
+                  <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                  <li class="breadcrumb-item active" aria-current="page">Results</li>
+                </ol>
+              </nav>
+
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-lg-12 col-md-6">
+        <!-- Left box  -->
+        <div class="box">
+
+          <h3 class="title">Results & Application</h3>
+
+          <hr>
+          <p>From our model results, the strongest positive predictors were "Have you thought about suicide - Yes" (V6301_YES), 
+            "Have you made a suicide plan? - Yes (V6305_YES), and "Irritability - Very" (V5112_VERY). This was expected based on the 
+          subject matter of these variables.</p>
+
+          <p>The strongest negative predictors were both indicators of highly educated persons, "EDCAT_13-15 Years" and "EDCAT_16+ Years".</p>
+
+          <p>For future use of the model, a user would need to select their threshold to use for recall of the classifier. We saw 
+            that with a threshold of -2, we could reach 82% recall with a precision of 39%. Essentially, increasing recall 
+            will decrease precision. Additional work should be performed to optimize the threshold for future use. 
+          </p>
+
+        </div>
+      </div>
+    </div>
+    <div class="row">
+        <div class="col-12">
+          <!-- Left box  -->
+          <div class="box">
+            <h4>Model Variable Coeffients</h4>
+            <hr>
+            <table class="table table-bordered table-hover table-condensed">
+              <thead><tr><th title="Field #1">Coefficient</th>
+              <th title="Field #2">Input Variable</th>
+              </tr></thead>
+              <tbody><tr>
+              <td >1.405703812270731</td>
+              <td>V6301_YES</td>
+              </tr>
+              <tr>
+              <td >0.3352223221274035</td>
+              <td>V6305_YES</td>
+              </tr>
+              <tr>
+              <td >0.2671181245853438</td>
+              <td>V5112_VERY</td>
+              </tr>
+              <tr>
+              <td >0.22031080567473357</td>
+              <td>MANLT1_Present</td>
+              </tr>
+              <tr>
+              <td >0.19490744465606258</td>
+              <td>AGOLT2_Present</td>
+              </tr>
+              <tr>
+              <td >0.187354920012867</td>
+              <td>GADLT2_Present</td>
+              </tr>
+              <tr>
+              <td >0.18677025125436397</td>
+              <td>RACE_Other</td>
+              </tr>
+              <tr>
+              <td >0.16174506120081208</td>
+              <td>V5114_NOT AT ALL</td>
+              </tr>
+              <tr>
+              <td >0.16002889217051564</td>
+              <td>V4428_NOT TRUE AT ALL</td>
+              </tr>
+              <tr>
+              <td >0.1574067835723938</td>
+              <td>DEPLT1_Present</td>
+              </tr>
+              <tr>
+              <td >0.14607985652706781</td>
+              <td>V6143_YES</td>
+              </tr>
+              <tr>
+              <td >0.14306933488338724</td>
+              <td>V5114_VERY</td>
+              </tr>
+              <tr>
+              <td >0.11597610119923091</td>
+              <td>CDLT_Present</td>
+              </tr>
+              <tr>
+              <td >0.10503733279461921</td>
+              <td>V6649_YES</td>
+              </tr>
+              <tr>
+              <td >0.10190670082093853</td>
+              <td>V4428_SOMEWHAT TRUE</td>
+              </tr>
+              <tr>
+              <td >0.09376439874700598</td>
+              <td>EMP_Other</td>
+              </tr>
+              <tr>
+              <td >0.08748741857235821</td>
+              <td>DRGDLT_Present</td>
+              </tr>
+              <tr>
+              <td >0.08444230263392431</td>
+              <td>V4433_VERY TRUE</td>
+              </tr>
+              <tr>
+              <td >0.08291378285814878</td>
+              <td>MARSTAT_Marswd</td>
+              </tr>
+              <tr>
+              <td >0.06514503860507423</td>
+              <td>V5114_SOMEWHAT</td>
+              </tr>
+              <tr>
+              <td >0.06350514837099</td>
+              <td>V102_FAIR</td>
+              </tr>
+              <tr>
+              <td >0.06311551277404878</td>
+              <td>EMP_Working, incl. temp. laid off, matern./s</td>
+              </tr>
+              <tr>
+              <td >0.062011612294565255</td>
+              <td>DYSLT2_Present</td>
+              </tr>
+              <tr>
+              <td >0.05925450443116165</td>
+              <td>V4433_nan</td>
+              </tr>
+              <tr>
+              <td >0.05428055300577384</td>
+              <td>V5118_SOMEWHAT</td>
+              </tr>
+              <tr>
+              <td >0.05082971973728185</td>
+              <td>V6749_YES</td>
+              </tr>
+              <tr>
+              <td >0.048182940687969814</td>
+              <td>REL_Other</td>
+              </tr>
+              <tr>
+              <td >0.04603511160559177</td>
+              <td>V5118_NOT AT ALL</td>
+              </tr>
+              <tr>
+              <td >0.04050708922655088</td>
+              <td>V6649_INAP</td>
+              </tr>
+              <tr>
+              <td >0.04036439411734284</td>
+              <td>V102_POOR</td>
+              </tr>
+              <tr>
+              <td >0.028841834091414605</td>
+              <td>V4428_VERY TRUE</td>
+              </tr>
+              <tr>
+              <td >0.02769841821160808</td>
+              <td>V6215_ONLY ONE YES RESPONSE IN U1-U12</td>
+              </tr>
+              <tr>
+              <td >0.02345695425121209</td>
+              <td>DEPLT2_Present</td>
+              </tr>
+              <tr>
+              <td >0.021070168240737604</td>
+              <td>BP1LT1_Present</td>
+              </tr>
+              <tr>
+              <td >0.015240909997301032</td>
+              <td>V4433_SOMEWHAT TRUE</td>
+              </tr>
+              <tr>
+              <td >0.008586678359335631</td>
+              <td>V6126_NO</td>
+              </tr>
+              <tr>
+              <td >0.005086174004186556</td><td>PTLT_Present</td>
+              </tr>
+              <tr>
+              <td >0.0016084761572354507</td><td>ALCALT2_Present</td>
+              </tr>
+              <tr>
+              <td >0.0013714895414490762</td><td>ASPLT1_Present</td>
+              </tr>
+              <tr>
+              <td >-4.3792614336451575e-09</td><td>ALCALT1_Present</td>
+              </tr>
+              <tr>
+              <td >-6.189127774912484e-05</td><td>PDLT_Present</td>
+              </tr>
+              <tr>
+              <td >-0.0022437033962745445</td><td>BP1LT2_Present</td>
+              </tr>
+              <tr>
+              <td >-0.0026680125780015793</td><td>GADLT1_Present</td>
+              </tr>
+              <tr>
+              <td >-0.0078017820139745335</td><td>V6749_NO</td>
+              </tr>
+              <tr>
+              <td >-0.008203806858502033</td><td>ALCDLT_Present</td>
+              </tr>
+              <tr>
+              <td >-0.012548959620373385</td><td>V5918_RARELY</td>
+              </tr>
+              <tr>
+              <td >-0.014238671801721343</td><td>DYSLT1_Present</td>
+              </tr>
+              <tr>
+              <td >-0.019657947337533187</td><td>V101_GOOD</td>
+              </tr>
+              <tr>
+              <td >-0.01971568015411971</td><td>REL_Protestant</td>
+              </tr>
+              <tr>
+              <td >-0.022318621559910382</td><td>V102_GOOD</td>
+              </tr>
+              <tr>
+              <td >-0.024668097014764495</td><td>V5115_nan</td>
+              </tr>
+              <tr>
+              <td >-0.027327036902896503</td><td>V5918_OFTEN</td>
+              </tr>
+              <tr>
+              <td >-0.028427557945102683</td><td>DRGALT2_Present</td>
+              </tr>
+              <tr>
+              <td >-0.031782700925540024</td><td>V101_VERY GOOD</td>
+              </tr>
+              <tr>
+              <td >-0.03180425889168251</td><td>V6649_nan</td>
+              </tr>
+              <tr>
+              <td >-0.04131970378340204</td><td>NAPLT_Present</td>
+              </tr>
+              <tr>
+              <td >-0.04317463541935023</td><td>V6749_INAP</td>
+              </tr>
+              <tr>
+              <td >-0.04331059762929013</td> <td>V5113_nan</td>
+              </tr>
+              <tr>
+              <td >-0.04409823261316062</td><td>REL_No Preference, None</td>
+              </tr>
+              <tr>
+              <td >-0.045512862368752564</td><td>PTSDLT_Present</td>
+              </tr>
+              <tr>
+              <td >-0.06548163878321532</td><td>V5114_nan</td>
+              </tr>
+              <tr>
+              <td >-0.06558426381372447</td><td>V6126_nan</td>
+              </tr>
+              <tr>
+              <td >-0.072079539972884</td><td>V101_FAIR</td>
+              </tr>
+              <tr>
+              <td >-0.07365587155458184</td><td>V5115_VERY</td>
+              </tr>
+              <tr>
+              <td >-0.07554611205687609</td><td>V6649_NO</td>
+              </tr>
+              <tr>
+              <td >-0.07581536683103464</td><td>V5113_NOT AT ALL</td>
+              </tr>
+              <tr>
+              <td >-0.0763143332665447</td><td>V5115_SOMEWHAT</td>
+              </tr>
+              <tr>
+              <td >-0.07755640720234999</td><td>AGOLT1_Present</td>
+              </tr>
+              <tr>
+              <td >-0.08034999051940162</td><td>V101_POOR</td>
+              </tr>
+              <tr>
+              <td >-0.08598988794640758</td><td>V4433_NOT TRUE AT ALL</td>
+              </tr>
+              <tr>
+              <td >-0.08725683116114903</td><td>V5115_NOT AT ALL</td>
+              </tr>
+              <tr>
+              <td >-0.09134989171199648</td><td>V6143_nan</td>
+              </tr>
+              <tr>
+              <td >-0.10197774432451405</td><td>V5225_SOME</td>
+              </tr>
+              <tr>
+              <td >-0.10326360939887179</td><td>RACE_White</td>
+              </tr>
+              <tr>
+              <td >-0.10470480896369988</td><td>EMP_Student</td>
+              </tr>
+              <tr>
+              <td >-0.1084265363142451</td><td>AGE</td>
+              </tr>
+              <tr>
+              <td >-0.11341981834248227</td><td>V5113_SOMEWHAT</td>
+              </tr>
+              <tr>
+              <td >-0.11563431507087796</td><td>V5118_VERY</td>
+              </tr>
+              <tr>
+              <td >-0.12914883253025136</td><td>V5225_NOT AT ALL</td>
+              </tr>
+              <tr>
+              <td >-0.15262054762584326</td><td>MANLT2_Present</td>
+              </tr>
+              <tr>
+              <td >-0.15988760994935408</td><td>V5918_SOMETIMES</td>
+              </tr>
+              <tr>
+              <td >-0.1717779338449285</td><td>MARSTAT_Marnev</td>
+              </tr>
+              <tr>
+              <td >-0.17285336745134225</td><td>SEX_Male</td>
+              </tr>
+              <tr>
+              <td >-0.17403082831266203</td><td>SIMLT_Present</td>
+              </tr>
+              <tr>
+              <td >-0.17628401943347866</td><td>EDCAT_12 Years</td>
+              </tr>
+              <tr>
+              <td >-0.18033489401509195</td><td>V102_VERY GOOD</td>
+              </tr>
+              <tr>
+              <td >-0.20160868214576103</td><td>V6114_NO</td>
+              </tr>
+              <tr>
+              <td >-0.2142356450200656</td><td>V5113_VERY</td>
+              </tr>
+              <tr>
+              <td >-0.24344419753797647</td><td>V5118_nan</td>
+              </tr>
+              <tr>
+              <td >-0.2693705527928723</td><td>V5225_nan</td>
+              </tr>
+              <tr>
+              <td >-0.28279116592730885</td><td>V4428_nan</td>
+              </tr>
+              <tr>
+              <td >-0.28704678553078117</td><td>V5225_INAP</td>
+              </tr>
+              <tr>
+              <td >-0.4396296944457304</td><td>EDCAT_13-15 Years</td>
+              </tr>
+              <tr>
+              <td >-0.7817613297772439</td><td>EDCAT_16+ Years</td>
+              </tr>
+              </tbody></table>
+  
+          </div>
+        </div>
+      </div>
+      <div class="row">
+          <div class="col-lg-6 col-md-12">
+            <h5>Future Ideas for Extending the Analysis</h5>
+            <ul>
+              <li>More Data! Include additional fields as well as addition cases to test/train</li>
+              <li>More current data. Our dataset was based on a study in 1991</li>
+              <li>Additional data on demographics as inputs for the </li>
+              <li>Error analysis to figure out why classifiers may be contributing to false positives and false negatives.</li> 
+              <li>Optimizing a way to scrape the category labels, given the volume involved.</li>
+            </ul>
+
+        </div>
+  </div>
+  <!-- Footer Section -->
+  <footer>
+    <div class="footer">Copyright &copy; Team Turducken 2019</div>
+  </footer>
+
+  <!-- Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  
+
+</body>
+
+</html>
