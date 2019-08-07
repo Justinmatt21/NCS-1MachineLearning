@@ -87,15 +87,21 @@
           <hr>
           <p>Let Y denote the response variable. $Y$ is a 0-1 valued variable with a success coded as
               a 1. Let $X = (X_1 . . . X_m)$ denote the values of the $m$ predictors.</p>
-              <p>The odds ratio $O$ is dened to as:</p>
+              <p>The odds ratio $O$ is defined as:</p>
               <p style="text-align:center">$$O = {Pr(Y = 1|X) \over 1- Pr(Y = 1|X)}$$</p>
-              <p>The traditional logistic regression model assumes that the log-odds ratio is related
+              <p>The logistic regression model assumes that the log-odds ratio is related
               to the predictors by:</p>
-              <p style="text-align:center">$$logit = log(O) = \beta_0 + \beta_1X_1 + ... + \beta_mX_m$$</p>
-              <p>The slope parameters in this model have a meaning interpretation; for example,
-              consider $\beta_1$. If we increase $X_1$ by one unit while holding the other predictors fixed,
+              <p style="text-align:center">$$\mathrm{logit} = \log(O) = \beta_0 + \beta_1X_1 + ... + \beta_mX_m$$</p>
+              <p>The slope parameters in this model have a meaningful interpretation.</p>
+              <p>Consider $\beta_1$: If we increase $X_1$ by one unit while holding the other predictors fixed,
               exp($\beta_1$) is the resulting change in the odds for success. If $\beta_1 = 0.693$, the odds of success
-              doubles when $X_1$ increases by one unit $exp(0.693) = 2$.</p>
+              doubles when $X_1$ increases by one unit $\exp(0.693) = 2$.</p>
+
+          <p>The logistic regression model can also be used to classify observations.  We classify an observation as a 
+            success, $Y=1$, if $\Pr(Y=1|X) \ge 0.5$.  This is the same as classifying an observation as a success if the $\mathrm{logit} \ge 0$.
+            
+            Changing the value of the threshold 0 can lead to classifiers with different behavior.  
+          </p>
 
         </div>
       </div>
@@ -105,7 +111,8 @@
             <h4 class="card-header">Classification Matrix</h4>
             <img class="card-img-top" src="images\classificationmatrix.png" alt="Classification Matrix">
             <div class="card-body">
-              <p class="card-text">Describe the classification matrix results here.</p>
+              <p class="card-text">The precision, or specificity, is the fraction of positive predictions made that were correct.  
+                The recall, or sensitivity, is the true positive rate for each class.  It is the fraction of positive results that were classified as positive</p>
             </div>
           </div>
       </div>
@@ -118,13 +125,15 @@
             <hr>
             <p>Given a data set $(Y_1,X_1), . . . , (Y_n,X_n)$, the usual method of fitting the logistic regression
                 model minimizes a criterion of the form:
-                $$Dev(\beta) = (-2N^{-1} log L(\beta | X) = -2N^{-1} log \prod_{Y_1=1} Pr(Y_i | X_i;\beta ) \prod_{Y_1=0} Pr(Y_i | X_i; \beta)$$
-                When the dimension of X is large, the t can become unstable. We can enforce
-                sparsity in the solution by considering a penalty term for large values of . One penalty
-                term that is often incorporated is the so-called LASSO penalty. The penalized criterion
-                is
-                $$Dev(\beta) + \lambda \sum_{j=1}^m|\beta_j|$$
-                When $\lambda = 0$, there is no penalty. As $\lambda$ grows, larger values of $\beta_j$ are penalized.</p>
+                $$\mathrm{Dev}(\beta) = -2n^{-1} \log \prod_{Y_1=1} \Pr(Y_i | X_i;\beta ) \prod_{Y_1=0} \Pr(Y_i | X_i; \beta)$$
+                When the dimension of $X$ is large, the fit can become unstable resulting in predictions with large variance.   We can
+                regularize the fit by adding a term to the fitting criterion which penalizes large values of $\beta$.
+                One penalty term that is often incorporated is the so-called LASSO penalty. The penalized criterion is
+                $$\mathrm{Dev}(\beta) + \lambda \sum_{j=1}^m|\beta_j|$$
+                When $\lambda = 0$, there is no penalty. As $\lambda$ grows, the estimated coefficients are shrunk towards 0.
+                Scikit-Learn's logistic regression classifier, uses a penalty term that is the reciprocal of $\lambda$.
+              
+              </p>
   
           </div>
         </div>
@@ -151,7 +160,11 @@
                 <h4>ROC Curve of Classifier</h4>
                 <hr>
                 <img src="images\roccurve.png" alt="ROC Curve">
-                <p>Describe ROC curve of the classifier.</p>
+                <p>The receiver operating characteristic curve displays the trade-off between the True Positive Rate (recall) 
+                  and the False Positive Rate (1 - precision).  A classifier that guesses at random would fall somewhere on the dotted line.
+                  A perfect classifier would be at the point (0, 1) in the upper left-hand corner: Precision = 1 and Recall = 1.
+
+                </p>
       
               </div>
             </div>
