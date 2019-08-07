@@ -79,7 +79,7 @@
         <div class="box">
           <h5 class="title">Variable Selection</h5>
           <p>Due to the constraints of time, bandwidth and knowledge, we opted to choose a limited number of variables from the complete
-            set for the purposes of modeling. The list was reduced to 29 variables, based on research performed by the team that suggested 
+            set for the purposes of modeling. The list was reduced to 54 variables, based on research performed by the team that suggested 
             certain elements that might be of most interest to the goal of predicting suicide attempts.</p>
             <h5>Variable selected for prediction: V1144</h5>
             <p>V6309 is a Yes/No response question, "Have you ever attempted suicide?"</p>
@@ -156,10 +156,10 @@
             <h5 class="title">Data Preparation for Model Input</h5>
             <p>Final steps were performed to prepare the data for entry into the machine learning model:</p>
             <ul>
-              <li>Remove all missing values by case. Remaining full cases: 1345</li>
+              <li>Remove missing cases from the response (missing by survey design) leaving 5872 cases.</li>
 
               <li>Convert categorical predictors to one-hot encoded using pandas.get_dummies().   
-                This increases the number of predictors to 118 – all but one predictor is 0-1-valued.</li>
+                This increases the number of predictors to 161 – all but one predictor is 0-1-valued.</li>
               <li>Scale the predictors</li>
             </ul>
           </div>
