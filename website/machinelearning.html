@@ -162,9 +162,25 @@
                 <hr>
                 <img src="images\roccurve.png" alt="ROC Curve">
                 <p>The receiver operating characteristic curve displays the trade-off between the True Positive Rate (recall) 
-                  and the False Positive Rate (1 - precision).  A classifier that guesses at random would fall somewhere on the dotted line.
-                  A perfect classifier would be at the point (0, 1) in the upper left-hand corner: Precision = 1 and Recall = 1.
+                  and the False Positive Rate.  A classifier that guesses at random would fall somewhere on the dotted line.
+                  A perfect classifier would be at the point (0, 1) in the upper left-hand corner: No False Negatives and No False Positives.
 
+                </p>
+      
+              </div>
+            </div>
+
+            <div class="col-lg-6 col-md-12">
+              <!-- Left box  -->
+              <div class="box">
+                <h4>Precision and Recall as a Function of the Threshold</h4>
+                <hr>
+                <img src="images\precvsrecall.png" alt="Precision Vs Recall">
+                <p>By adjusting the threshold that our classifier uses, we can adjust the recall of our classifier.
+                  This will be at the expense of the precision; however, in this problem, correctly classifying 
+                  an individual that would attempt suicide (True Positive) is more important than having more false positives.
+                  For example, if we use a threshold of -2, our classifier would have a recall 0.82 and a precision of 0.39 within
+                  the the Attempt = Yes class.
                 </p>
       
               </div>
