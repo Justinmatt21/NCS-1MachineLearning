@@ -1,5 +1,11 @@
 # NCS-1MLProject Scraping and Machine Learning
 
+The original data files are available from [https://www.icpsr.umich.edu/icpsrweb/ICPSR/studies/25381](https://www.icpsr.umich.edu/icpsrweb/ICPSR/studies/25381)
+
+Citation:
+
+Kessler, Ronald C. National Comorbidity Survey: Baseline (NCS-1), 1990-1992 (Restricted Version). Ann Arbor, MI: Inter-university Consortium for Political and Social Researc, 2016-03-30. [https://doi.org/10.3886/ICPSR25381.v3]
+
 `scrape_vars.ipynb` is the Jupyter notebook for scraping the variables from the DS1 code book.  In addition to creating a Mongo DB, 
 the notebook creates 3 temporary files: `variables.csv`, `titles.csv`, `variables.json`.  The last file contains the same variable
 maps that are stored in the Mongo DB.  `scrape4.ipynb` is the scraping from the DS2 code book.
