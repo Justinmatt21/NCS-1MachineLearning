@@ -25,7 +25,7 @@ descriptive values.
 
 `morefitting.ipynb` is the Jupyter notebook with the Lasso Logistic Regression.  Adjusting the threshold to 
 acheive the desired recall is demonstrated.  The code to plot the L1 Regularization Paths was found here:
-[https://scikit-learn.org/stable/auto_examples/linear_model/plot_logistic_path.html](L1 Regularization Path for Logistic Regression)
+[L1 Regularized Path for Logistic Regression](https://scikit-learn.org/stable/auto_examples/linear_model/plot_logistic_path.html)
 All credit is due to the Author: Alexandre Gramfort <alexandre.gramfort@inria.fr>
 
 The file also includes several other fits including Decision Trees, Random Forests, Boosting, Support Vector Classifiers, and Neural Nets.  With the last method was not explored in detail, most methods struggle with the recall in this problem.
