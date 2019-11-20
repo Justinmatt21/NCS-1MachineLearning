@@ -1,3 +1,4 @@
+# Machine Learning using the National Comorbidity Survey
 
 The goal of this project was to use machine learning to predict suicidal behavior based on a subsection of a dataset containing survey responses.  Variable selection was performed by referencing recent psychological literature to identify variables which have been shown to be associated with suicidal behavior.
 
@@ -30,3 +31,4 @@ acheive the desired recall is demonstrated.  The code to plot the L1 Regularizat
 All credit is due to the Author: Alexandre Gramfort <alexandre.gramfort@inria.fr>
 
 The file also includes several other fits including Decision Trees, Random Forests, Boosting, Support Vector Classifiers, and Neural Nets.  With the last method was not explored in detail, most methods struggle with the recall in this problem.
+ 
