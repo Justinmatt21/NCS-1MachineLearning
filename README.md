@@ -2,11 +2,13 @@
 
 The goal of this project was to use machine learning to predict suicidal behavior based on a subsection of a dataset containing survey responses.  Variable selection was performed by referencing recent psychological literature to identify variables which have been shown to be associated with suicidal behavior.
 
-The original data are available from [https://www.icpsr.umich.edu/icpsrweb/NAHDAP/studies/6693](https://www.icpsr.umich.edu/icpsrweb/NAHDAP/studies/6693)
+The original data are accessible from [the ICPSR website](https://www.icpsr.umich.edu/icpsrweb/NAHDAP/studies/6693)
 
 Citation:
 
 Kessler, Ronald C. National Comorbidity Survey: Baseline (NCS-1), 1990-1992. Ann Arbor, MI: Inter-university Consortium for Political and Social Research (distributor), 2008-09-12. [https://doi.org/10.3886/ICPSR06693.v6]
+
+Summary data regarding suicidal behavior were gathered from the [National Center for Health Statictics, Centers for Disease Control and Prevention](https://www.cdc.gov/nchs/products/databriefs/db330.htm)
 
 `scrape_vars.ipynb` is the Jupyter notebook for scraping the variables from the DS1 code book.  In addition to creating a Mongo DB, 
 the notebook creates 3 temporary files: `variables.csv`, `titles.csv`, `variables.json`.  The last file contains the same variable
